@@ -59,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void registerBtnClicked(View view) {
-        Intent intent = new Intent("com.action.register"); //implicit activity.
+        Intent intent = new Intent(); //implicit activity.
+        intent.setAction("com.action.ex3.register");
         startActivityForResult(intent, REGISTER_ID);
     }
 
