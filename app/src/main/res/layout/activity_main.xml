@@ -111,6 +111,7 @@
                 android:id="@+id/textView"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
+                android:textSize="25dp"
                 android:layout_weight="1" />
 
             <Button
