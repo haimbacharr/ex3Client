@@ -30,24 +30,23 @@ public class MainActivity extends AppCompatActivity {
         tv1 = (TextView) findViewById(R.id.textView);
     }
 
+    //This method called when the call button pressed.
     public void callBtnClicked(View view) {
-
             String phoneNumberStr = edCall.getText().toString();
             Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumberStr));
-            startActivity(intent);
+            startActivity(intent); // will open the phone dialer.
         }
 
-
+    //This method called when the surf button pressed.
     public void surfBtnClicked(View view) {
-
             String websiteAddressStr = edSurf.getText().toString();
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(websiteAddressStr));
-            startActivity(intent);
+            startActivity(intent); //will open the web explorer.
 
     }
 
+    //This method called when the email button pressed.
     public void emailBtnClicked(View view) {
-
         String emailStr = edEmail.getText().toString();
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:" + emailStr)); // only email apps should handle this
@@ -58,12 +57,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+    //This method will called when the register button pressed.
     public void registerBtnClicked(View view) {
         Intent intent = new Intent(); //implicit activity.
-        intent.setAction("com.action.ex3.register");
-        startActivityForResult(intent, REGISTER_ID);
+        intent.setAction("com.action.ex3.register"); // set action to ex3 register.
+        startActivityForResult(intent, REGISTER_ID); // requires an result from the ex3a or ex3b apps.
     }
 
+    //This method handle the result from the ex3a or ex3b apps.
     @Override
     protected void onActivityResult(int requestCode,int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
